@@ -1,0 +1,197 @@
+[
+  {
+    "businessName": "Business A",
+    "location": {
+      "type": "Point",
+      "coordinates": [12.34, 56.78]
+    },
+    "address": "Address 1",
+    "images": ["image1.jpg", "image2.jpg"],
+    "description": "This is the description for Business A",
+    "category": "shop",
+    "businessId": "1",
+    "businessRating": 4.5,
+    "votes": 100,
+    "reviewCount": 50
+  },
+  {
+    "businessName": "Business B",
+    "location": {
+      "type": "Point",
+      "coordinates": [98.76, 54.32]
+    },
+    "address": "Address 2",
+    "images": ["image3.jpg", "image4.jpg"],
+    "description": "This is the description for Business B",
+    "category": "restaurant",
+    "businessId": "2",
+    "businessRating": 3.8,
+    "votes": 80,
+    "reviewCount": 30
+  },
+  {
+    "businessName": "Business C",
+    "location": {
+      "type": "Point",
+      "coordinates": [45.67, 32.1]
+    },
+    "address": "Address 3",
+    "images": ["image5.jpg", "image6.jpg"],
+    "description": "This is the description for Business C",
+    "category": "experience",
+    "businessId": "3",
+    "businessRating": 4.2,
+    "votes": 120,
+    "reviewCount": 70
+  },
+  {
+    "businessName": "Business D",
+    "location": {
+      "type": "Point",
+      "coordinates": [87.65, 43.21]
+    },
+    "address": "Address 4",
+    "images": ["image7.jpg", "image8.jpg"],
+    "description": "This is the description for Business D",
+    "category": "shop",
+    "businessId": "4",
+    "businessRating": 4.0,
+    "votes": 90,
+    "reviewCount": 40
+  },
+  {
+    "businessName": "Business E",
+    "location": {
+      "type": "Point",
+      "coordinates": [23.45, 76.54]
+    },
+    "address": "Address 5",
+    "images": ["image9.jpg", "image10.jpg"],
+    "description": "This is the description for Business E",
+    "category": "restaurant",
+    "businessId": "5",
+    "businessRating": 3.5,
+    "votes": 60,
+    "reviewCount": 20
+  },
+  {
+    "businessName": "Business F",
+    "location": {
+      "type": "Point",
+      "coordinates": [34.56, 87.65]
+    },
+    "address": "Address 6",
+    "images": ["image11.jpg", "image12.jpg"],
+    "description": "This is the description for Business F",
+    "category": "experience",
+    "businessId": "6",
+    "businessRating": 4.8,
+    "votes": 150,
+    "reviewCount": 80
+  },
+  {
+    "businessName": "Business G",
+    "location": {
+      "type": "Point",
+      "coordinates": [65.43, 78.9]
+    },
+    "address": "Address 7",
+    "images": ["image13.jpg", "image14.jpg"],
+    "description": "This is the description for Business G",
+    "category": "shop",
+    "businessId": "7",
+    "businessRating": 4.2,
+    "votes": 110,
+    "reviewCount": 60
+  },
+  {
+    "businessName": "Business H",
+    "location": {
+      "type": "Point",
+      "coordinates": [76.54, 89.01]
+    },
+    "address": "Address 8",
+    "images": ["image15.jpg", "image16.jpg"],
+    "description": "This is the description for Business H",
+    "category": "restaurant",
+    "businessId": "8",
+    "businessRating": 4.1,
+    "votes": 95,
+    "reviewCount": 45
+  },
+  {
+    "businessName": "Business I",
+    "location": {
+      "type": "Point",
+      "coordinates": [90.12, 21.34]
+    },
+    "address": "Address 9",
+    "images": ["image17.jpg", "image18.jpg"],
+    "description": "This is the description for Business I",
+    "category": "experience",
+    "businessId": "9",
+    "businessRating": 4.6,
+    "votes": 130,
+    "reviewCount": 75
+  },
+  {
+    "businessName": "Business J",
+    "location": {
+      "type": "Point",
+      "coordinates": [43.21, 32.1]
+    },
+    "address": "Address 10",
+    "images": ["image19.jpg", "image20.jpg"],
+    "description": "This is the description for Business J",
+    "category": "shop",
+    "businessId": "10",
+    "businessRating": 3.9,
+    "votes": 85,
+    "reviewCount": 35
+  },
+  {
+    "businessName": "Business K",
+    "location": {
+      "type": "Point",
+      "coordinates": [65.43, 12.34]
+    },
+    "address": "Address 11",
+    "images": ["image21.jpg", "image22.jpg"],
+    "description": "This is the description for Business K",
+    "category": "restaurant",
+    "businessId": "11",
+    "businessRating": 4.3,
+    "votes": 105,
+    "reviewCount": 55
+  },
+  {
+    "businessName": "Business L",
+    "location": {
+      "type": "Point",
+      "coordinates": [21.34, 90.12]
+    },
+    "address": "Address 12",
+    "images": ["image23.jpg", "image24.jpg"],
+    "description": "This is the description for Business L",
+    "category": "experience",
+    "businessId": "12",
+    "businessRating": 4.7,
+    "votes": 140,
+    "reviewCount": 65
+  },
+  {
+    "businessName": "Business M",
+    "location": {
+      "type": "Point",
+      "coordinates": [87.65, 34.56]
+    },
+    "address": "Address 13",
+    "images": ["image25.jpg", "image26.jpg"],
+    "description": "This is the description for Business M",
+    "category": "shop",
+    "businessId": "13",
+    "businessRating": 4.4,
+    "votes": 115,
+    "reviewCount": 78
+  }
+]
