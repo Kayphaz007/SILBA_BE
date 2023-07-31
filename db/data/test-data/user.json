@@ -1,0 +1,142 @@
+[
+  {
+    "username": "user1",
+    "fullName": "User One",
+    "password": "password1",
+    "email": "user1@example.com",
+    "avatarUrl": "https://example.com/avatar1.jpg"
+  },
+  {
+    "username": "user2",
+    "fullName": "User Two",
+    "password": "password2",
+    "email": "user2@example.com",
+    "avatarUrl": "https://example.com/avatar2.jpg"
+  },
+  {
+    "username": "user3",
+    "fullName": "User Three",
+    "password": "password3",
+    "email": "user3@example.com",
+    "avatarUrl": "https://example.com/avatar3.jpg"
+  },
+  {
+    "username": "user4",
+    "fullName": "User Four",
+    "password": "password4",
+    "email": "user4@example.com",
+    "avatarUrl": "https://example.com/avatar4.jpg"
+  },
+  {
+    "username": "user5",
+    "fullName": "User Five",
+    "password": "password5",
+    "email": "user5@example.com",
+    "avatarUrl": "https://example.com/avatar5.jpg"
+  },
+  {
+    "username": "user6",
+    "fullName": "User Six",
+    "password": "password6",
+    "email": "user6@example.com",
+    "avatarUrl": "https://example.com/avatar6.jpg"
+  },
+  {
+    "username": "user7",
+    "fullName": "User Seven",
+    "password": "password7",
+    "email": "user7@example.com",
+    "avatarUrl": "https://example.com/avatar7.jpg"
+  },
+  {
+    "username": "user8",
+    "fullName": "User Eight",
+    "password": "password8",
+    "email": "user8@example.com",
+    "avatarUrl": "https://example.com/avatar8.jpg"
+  },
+  {
+    "username": "user9",
+    "fullName": "User Nine",
+    "password": "password9",
+    "email": "user9@example.com",
+    "avatarUrl": "https://example.com/avatar9.jpg"
+  },
+  {
+    "username": "user10",
+    "fullName": "User Ten",
+    "password": "password10",
+    "email": "user10@example.com",
+    "avatarUrl": "https://example.com/avatar10.jpg"
+  },
+  {
+    "username": "user11",
+    "fullName": "User Eleven",
+    "password": "password11",
+    "email": "user11@example.com",
+    "avatarUrl": "https://example.com/avatar11.jpg"
+  },
+  {
+    "username": "user12",
+    "fullName": "User Twelve",
+    "password": "password12",
+    "email": "user12@example.com",
+    "avatarUrl": "https://example.com/avatar12.jpg"
+  },
+  {
+    "username": "user13",
+    "fullName": "User Thirteen",
+    "password": "password13",
+    "email": "user13@example.com",
+    "avatarUrl": "https://example.com/avatar13.jpg"
+  },
+  {
+    "username": "user14",
+    "fullName": "User Fourteen",
+    "password": "password14",
+    "email": "user14@example.com",
+    "avatarUrl": "https://example.com/avatar14.jpg"
+  },
+  {
+    "username": "user15",
+    "fullName": "User Fifteen",
+    "password": "password15",
+    "email": "user15@example.com",
+    "avatarUrl": "https://example.com/avatar15.jpg"
+  },
+  {
+    "username": "user16",
+    "fullName": "User Sixteen",
+    "password": "password16",
+    "email": "user16@example.com",
+    "avatarUrl": "https://example.com/avatar16.jpg"
+  },
+  {
+    "username": "user17",
+    "fullName": "User Seventeen",
+    "password": "password17",
+    "email": "user17@example.com",
+    "avatarUrl": "https://example.com/avatar17.jpg"
+  },
+  {
+    "username": "user18",
+    "fullName": "User Eighteen",
+    "password": "password18",
+    "email": "user18@example.com",
+    "avatarUrl": "https://example.com/avatar18.jpg"
+  },
+  {
+    "username": "user19",
+    "fullName": "User Nineteen",
+    "password": "password19",
+    "email": "user19@example.com",
+    "avatarUrl": "https://example.com/avatar19.jpg"
+  },
+  {
+    "username": "user20",
+    "fullName": "User Twenty",
+    "password": "password20",
+    "email": "user20@example.com",
+    "avatarUrl": "https://example.com/avatar20.jpg"
+  }
+]

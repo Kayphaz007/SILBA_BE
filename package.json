@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "seed": "node ./db/seeds/run-seed.js",
     "test": "jest",
-    "start": "nodemon listen.js"
+    "start": "node listen.js",
+    "dev": "nodemon listen.js"
   },
   "keywords": [],
   "author": "",
