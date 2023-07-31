@@ -1,0 +1,32 @@
+[
+  {
+    "businessName": "Business 1",
+    "location": {
+      "type": "Point",
+      "coordinates": [12.34, 56.78]
+    },
+    "address": "Address 1",
+    "images": ["image1.jpg", "image2.jpg"],
+    "description": "This is the description for Business 1",
+    "category": "shop",
+    "businessId": "1",
+    "businessRating": 4.5,
+    "votes": 100,
+    "reviewCount": 50
+  },
+  {
+    "businessName": "Business 2",
+    "location": {
+      "type": "Point",
+      "coordinates": [98.76, 54.32]
+    },
+    "address": "Address 2",
+    "images": ["image3.jpg", "image4.jpg"],
+    "description": "This is the description for Business 2",
+    "category": "restaurant",
+    "businessId": "2",
+    "businessRating": 3.8,
+    "votes": 80,
+    "reviewCount": 30
+  }
+]
