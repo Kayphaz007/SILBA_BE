@@ -4,6 +4,8 @@ const db = require("./db/connect");
 const Business = require("./models/businessSchema");
 const User = require("./models/userSchema");
 const mongoose = require("mongoose");
+const userRouter = require('./routes/user')
+const businessRouter = require('./routes/business')
 
 //middleware
 app.use(express.json());
@@ -14,19 +16,14 @@ const start = async () => {
     await db();
     console.log("Database is running");
   } catch (error) {
-    console.log(error);
+    console.log({error});
   }
 };
 start();
 
 //routes
-app.get("/api/user", async (req, res) => {
-  const user = await User.find({});
-  res.status(200).send({ user });
-});
-app.get("/api/business", async (req, res) => {
-  const business = await Business.find({});
-  res.status(200).send({ business });
-});
 
+app.use('/api/users', userRouter)
+
+app.use("/api/business", businessRouter )
 module.exports = app;

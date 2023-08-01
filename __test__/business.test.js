@@ -12,25 +12,14 @@ afterAll(() => {
   mongoose.connection.close();
 });
 
-fdescribe("Testing Environment", () => {
+describe("Testing Environment", () => {
   test("should manipulate test database", () => {
     return request(app)
       .get("/api/business")
       .expect(200)
-      .then(({ text }) => {
-        const { business } = JSON.parse(text);
-        console.log(business);
+      .then(({body: {business}}) => {
+        console.log({business});
       });
   });
 });
 
-describe("Testing Environment", () => {
-  test("should manipulate test database", () => {
-    return request(app)
-      .get("/api/user")
-      .expect(200)
-      .then((data) => {
-        console.log(data);
-      });
-  });
-});
