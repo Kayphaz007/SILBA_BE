@@ -20,19 +20,19 @@ describe("Get /api/users", () => {
             return request(app)
               .get("/api/users")
               .expect(200)
-              .then(({body: allUser}) => {
+              .then(({body: {users}}) => {
 
-                console.log({allUser});
+                console.log({users});
               });
           });
     })
-    xdescribe('Get /api/user/:userId', ()=>{
-        test('should get user bu id', ()=>{
+    fdescribe('Get /api/user/:userId', ()=>{
+        test('should get user by id', ()=>{
             return request(app)
-            .get('/api/users/64c8d085e41dc8be42bb3ea8')
+            .get('/api/users/64c8e6df89d5c452c8427de9')
             .expect(200)
-            .then((body_userId)=>{
-                    console.log({body_userId})
+            .then(({body})=>{
+                    console.log(body)
             })
         })
     })

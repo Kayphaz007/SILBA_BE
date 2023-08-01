@@ -6,9 +6,12 @@ const User = require("./models/userSchema");
 const mongoose = require("mongoose");
 const userRouter = require('./routes/user')
 const businessRouter = require('./routes/business')
+const {errorHandlerMiddleware} = require('./middleware/error-handler')
+require('express-async-errors')
 
 //middleware
 app.use(express.json());
+app.use(errorHandlerMiddleware)
 
 const start = async () => {
   try {
