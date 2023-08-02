@@ -1,0 +1,15 @@
+[
+    {
+        "reviews": "This product is awesome!",
+        "reviewVote": 5,
+        "business": "64ca2e3c7bedb32c88519336",
+        "user": "64ca2e3c7bedb32c88519354"
+      },
+
+      {
+        "reviews": "Could be better",
+        "reviewVote": 3,
+        "business": "64ca2e3c7bedb32c88519336",
+        "user": "64ca2e3c7bedb32c88519355"
+      }
+]
