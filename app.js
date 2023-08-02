@@ -6,6 +6,7 @@ const User = require("./models/userSchema");
 const mongoose = require("mongoose");
 const userRouter = require('./routes/user')
 const businessRouter = require('./routes/business')
+const authRouter = require('./routes/auth')
 
 //middleware
 app.use(express.json());
@@ -26,4 +27,6 @@ start();
 app.use('/api/users', userRouter)
 
 app.use("/api/business", businessRouter )
+
+app.use('/api/register', authRouter)
 module.exports = app;
