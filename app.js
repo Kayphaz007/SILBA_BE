@@ -8,7 +8,7 @@ const userRouter = require('./routes/user')
 const businessRouter = require('./routes/business')
 const itemRouter = require("./routes/items")
 const {errorHandlerMiddleware} = require('./middleware/error-handler')
-require('express-async-errors')
+
 
 //middleware
 app.use(express.json());

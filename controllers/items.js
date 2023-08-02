@@ -20,3 +20,9 @@ res.status(200).send({data: item})
         console.log(err, "error posting items")
     }
 }
+
+exports.deleteItem = async (req, res, next) => {
+    const {itemId} = req.params
+    const deletedItem = await Item.findByIdAndDelete(itemId)
+    res.status(200).send({success: true, deletedItem})
+}

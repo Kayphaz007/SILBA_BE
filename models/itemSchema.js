@@ -3,11 +3,11 @@ const mongoose = require("mongoose");
 const itemSchema = new mongoose.Schema({
     itemname: {
       type: String,
-      //required: true,
+      required: true,
     },
     description: {
       type: String,
-     // required: true,
+     required: true,
     },
     image: {
       type: String, 
@@ -15,12 +15,12 @@ const itemSchema = new mongoose.Schema({
     },
     price: {
       type: Number,
-      //required: true,
+      required: true,
     },
     refUser: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User', 
-    //  required: true,
+    required: true,
     },
   });
   
