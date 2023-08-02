@@ -6,6 +6,7 @@ const User = require("./models/userSchema");
 const mongoose = require("mongoose");
 const userRouter = require('./routes/user')
 const businessRouter = require('./routes/business')
+const itemRouter = require("./routes/items")
 const {errorHandlerMiddleware} = require('./middleware/error-handler')
 require('express-async-errors')
 
@@ -29,4 +30,7 @@ start();
 app.use('/api/users', userRouter)
 
 app.use("/api/business", businessRouter )
+
+app.use("/api/items", itemRouter)
+
 module.exports = app;

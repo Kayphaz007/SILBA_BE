@@ -1,0 +1,44 @@
+[
+    {
+      "itemname": "Wireless Bluetooth Earbuds",
+      "description": "High-quality wireless earbuds with noise-canceling technology.",
+      "image": "earbuds.jpg",
+      "price": 49.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3cc"
+    },
+    {
+      "itemname": "Smartphone Gimbal Stabilizer",
+      "description": "A handheld stabilizer for smooth video recording with your smartphone.",
+      "image": "gimbal.jpg",
+      "price": 89.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3cc"
+    },
+    {
+      "itemname": "Premium Leather Wallet",
+      "description": "A stylish leather wallet with multiple card slots and a coin pocket.",
+      "image": "wallet.jpg",
+      "price": 29.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3ce"
+    },
+    {
+      "itemname": "Portable Espresso Maker",
+      "description": "Enjoy espresso on the go with this compact and easy-to-use coffee maker.",
+      "image": "espresso_maker.jpg",
+      "price": 69.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3ce"
+    },
+    {
+      "itemname": "Professional Chef Knife Set",
+      "description": "A set of high-quality knives for professional and home chefs.",
+      "image": "chef_knives.jpg",
+      "price": 149.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3d7"
+    },
+    {
+      "itemname": "Fitness Tracker Watch",
+      "description": "Track your health and fitness goals with this smartwatch.",
+      "image": "fitness_watch.jpg",
+      "price": 79.50,
+      "refUser": "64c8e8eebfee6b2a67d3d3d7"
+    }
+]
