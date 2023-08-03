@@ -11,3 +11,5 @@ exports.getUserById = async (req, res, next) => {
   const user = await User.findById(userId);
   res.status(200).send({ user });
 };
+
+
