@@ -2,7 +2,7 @@ const Reviews = require('../models/reviewSchema')
 
 exports.getReviews = async (req, res, next) =>{
     const reviews = await Reviews.find({})
-    console.log(reviews)
+   
     res.status(200).send({ reviews })
 }
 
@@ -28,5 +28,13 @@ exports.getReviews = async (req, res, next) =>{
       res.status(500).send({ error: 'Server error' });
     }
 
+  }
+
+  exports.getReviewById = async (req, res, next) =>{
+    const {businessId} = req.params
+    console.log(businessId)
+    const reviews = await Reviews.find({ business: businessId });
+    console.log(reviews)
+    res.status(200).send({reviews})
   }
 
