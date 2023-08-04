@@ -5,6 +5,7 @@ const Item = require("../../models/itemSchema");
 const Basket = require("../../models/basketSchema");
 const Reviews = require("../../models/reviewSchema");
 const Blog = require("../../models/blogSchema");
+const Checkout = require("../../models/checkoutSchema")
 // const { businessJson } = require("../data/test-data");
 // const data = require("../data/test-data")
 
@@ -16,6 +17,7 @@ const seed = async (data) => {
     blogJson,
     itemsJson,
     basketJson,
+    checkoutJson
   } = data;
   try {
     db();
@@ -33,6 +35,8 @@ const seed = async (data) => {
     await Reviews.create(reviewJson);
     await Blog.deleteMany();
     await Blog.create(blogJson);
+    await Checkout.deleteMany();
+    await Checkout.create(checkoutJson)
   } catch (error) {
     console.log(error);
   }

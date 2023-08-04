@@ -12,6 +12,7 @@ const {errorHandlerMiddleware} = require('./middleware/error-handler')
 const authRouter = require('./routes/auth')
 const reviewsRouter = require('./routes/review')
 const blogRouter = require('./routes/blog')
+const checkoutRouter = require('./routes/checkout')
 
 //middleware
 app.use(express.json());
@@ -41,6 +42,6 @@ app.use('/api/reviews', reviewsRouter)
 
 app.use('/api/blogs', blogRouter)
 
-
+app.use('/api/checkout', checkoutRouter)
 
 module.exports = app;
