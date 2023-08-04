@@ -20,8 +20,8 @@ const seed = async (data) => {
   try {
     db();
     // similar to drop database
-    // await Business.deleteMany();
-    // await Business.create(businessJson);
+    await Business.deleteMany();
+    await Business.create(businessJson);
 
     await User.deleteMany();
     await User.create(userJson);
@@ -29,12 +29,10 @@ const seed = async (data) => {
     await Item.create(itemsJson);
     await Basket.deleteMany();
     await Basket.create(basketJson);
-
-    // await Reviews.deleteMany();
-    // await Reviews.create(reviewJson)
-
-    // await Blog.deleteMany();
-    // await Blog.create(blogJson)
+    await Reviews.deleteMany();
+    await Reviews.create(reviewJson);
+    await Blog.deleteMany();
+    await Blog.create(blogJson);
   } catch (error) {
     console.log(error);
   }
