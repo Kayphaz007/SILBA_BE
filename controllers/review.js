@@ -32,9 +32,21 @@ exports.getReviews = async (req, res, next) =>{
 
   exports.getReviewById = async (req, res, next) =>{
     const {businessId} = req.params
-    console.log(businessId)
     const reviews = await Reviews.find({ business: businessId });
     console.log(reviews)
     res.status(200).send({reviews})
+  }
+
+  exports.changeVotesByOne = async (req, res, next) => {
+    const { reviewId } = req.params
+    const {voteUpdate} = req.body
+    const review = await Reviews.findById(reviewId);
+    if (voteUpdate === "increase") {
+      review.reviewVote += 1;
+    } else if (voteUpdate === "decrease") {
+review.reviewVote -= 1;
+    }
+    await review.save();
+res.status(200).send({"Review vote complete": review})
   }
 
