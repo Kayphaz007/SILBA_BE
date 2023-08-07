@@ -4,10 +4,10 @@ info:
   description: API documentation
 
 servers:
-  - url: http://localhost:9090/api
-    description: Optional server description, e.g. Main (production) server
+  - url: https://silba-be.onrender.com/api
+    description: Main Production Server
   - url: https://localhost:9090/api
-    description: Optional server description, e.g. Internal staging server for development
+    description: Internal Staging server for development
 
 paths:
   /auth/register:
