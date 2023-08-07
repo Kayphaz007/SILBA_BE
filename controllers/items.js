@@ -48,3 +48,10 @@ exports.deleteItem = async (req, res, next) => {
   const deletedItem = await Item.findByIdAndDelete(itemId);
   res.status(200).send({ success: true, deletedItem });
 };
+
+exports.patchItemPrice = async (req, res, next) => {
+    const {itemId} = req.params;
+    const {price} = req.body
+    const item = await Item.findByIdAndUpdate(itemId, {price}, { new: true})
+    res.status(200).send({itemUpdated: item})
+}
