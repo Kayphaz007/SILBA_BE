@@ -1,13 +1,13 @@
-const express = require('express')
-const router = express.Router()
-const { getReviews, postReviews, getReviewById } = require('../controllers/review')
+const express = require("express");
+const router = express.Router();
+const {
+  getReviews,
+  postReview,
+  getReviewById,
+} = require("../controllers/review");
 
+router.route("/").get(getReviews).post(postReview);
 
-router.route('/').get(getReviews)
+router.route("/:businessId").get(getReviewById);
 
-router.route('/').post(postReviews)
-
-router.route('/:businessId').get(getReviewById)
-
-
-module.exports = router
+module.exports = router;

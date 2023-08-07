@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const basketSchema = new mongoose.Schema({
+const orderSchema = new mongoose.Schema({
   itemname: {
     type: String,
     required: true,
@@ -29,6 +29,6 @@ const basketSchema = new mongoose.Schema({
   },
 });
 
-const Basket = mongoose.model("Basket", basketSchema);
+const Order = mongoose.model("Order", orderSchema);
 
-module.exports = Basket;
+module.exports = Order;
