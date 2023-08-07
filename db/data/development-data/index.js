@@ -4,6 +4,7 @@ const itemsJson = require("./items.json");
 const basketJson = require("./basket.json");
 const reviewJson = require("./review.json");
 const blogJson = require("./blog.json");
+const checkoutJson = require("./checkout.json");
 
 module.exports = {
   businessJson,
@@ -12,4 +13,5 @@ module.exports = {
   blogJson,
   itemsJson,
   basketJson,
+  checkoutJson
 };

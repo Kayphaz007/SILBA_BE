@@ -5,7 +5,7 @@ const { findAndDeleteByIds } = require("../utils/findAndDeleteByIds");
 
 exports.getCheckoutByUserId = async (req, res, next) => {
   const { refUser } = req.params;
-  const checkout = await Checkout.find({ refUser: refUser });
+  const checkout = await Checkout.find({ refUser });
   res.status(200).send({ checkout });
 };
 
