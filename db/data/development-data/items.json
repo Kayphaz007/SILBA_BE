@@ -1,0 +1,73 @@
+[
+    {
+      "itemname": "Wireless Bluetooth Earbuds",
+      "description": "High-quality wireless earbuds with noise-canceling technology.",
+      "image": "earbuds.jpg",
+      "price": 49.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3cc"
+    },
+    {
+      "itemname": "Smartphone Gimbal Stabilizer",
+      "description": "A handheld stabilizer for smooth video recording with your smartphone.",
+      "image": "gimbal.jpg",
+      "price": 89.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3cc"
+    },
+    {
+      "itemname": "Premium Leather Wallet",
+      "description": "A stylish leather wallet with multiple card slots and a coin pocket.",
+      "image": "wallet.jpg",
+      "price": 29.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3ce"
+    },
+    {
+      "itemname": "Portable Espresso Maker",
+      "description": "Enjoy espresso on the go with this compact and easy-to-use coffee maker.",
+      "image": "espresso_maker.jpg",
+      "price": 69.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3ce"
+    },
+    {
+      "itemname": "Professional Chef Knife Set",
+      "description": "A set of high-quality knives for professional and home chefs.",
+      "image": "chef_knives.jpg",
+      "price": 149.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3d7"
+    },
+    {
+      "itemname": "Fitness Tracker Watch",
+      "description": "Track your health and fitness goals with this smartwatch.",
+      "image": "fitness_watch.jpg",
+      "price": 79.50,
+      "refUser": "64c8e8eebfee6b2a67d3d3d7"
+    },
+    {
+      "itemname": "Vintage Vinyl Record Player",
+      "description": "Enjoy the warm sound of vinyl with this retro record player.",
+      "image": "record_player.jpg",
+      "price": 199.00,
+      "refUser": "64c8e8eebfee6b2a67d3d3d9"
+    },
+    {
+      "itemname": "Waterproof Hiking Backpack",
+      "description": "A durable backpack for all your hiking and outdoor adventures.",
+      "image": "hiking_backpack.jpg",
+      "price": 59.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3d9"
+    },
+    {
+      "itemname": "Wireless Gaming Mouse",
+      "description": "A high-performance gaming mouse with customizable RGB lighting.",
+      "image": "gaming_mouse.jpg",
+      "price": 49.99,
+      "refUser": "64c8e8eebfee6b2a67d3d3da"
+    },
+    {
+      "itemname": "Noise-Canceling Headphones",
+      "description": "Immerse yourself in music with these top-of-the-line noise-canceling headphones.",
+      "image": "headphones.jpg",
+      "price": 179.95,
+      "refUser": "64c8e8eebfee6b2a67d3d3da"
+    }
+  ]
+  

@@ -1,0 +1,842 @@
+openapi: 3.0.0
+info:
+  title: SILBA
+  description: API documentation
+
+servers:
+  - url: http://localhost:9090/api
+    description: Optional server description, e.g. Main (production) server
+  - url: https://localhost:9090/api
+    description: Optional server description, e.g. Internal staging server for development
+
+paths:
+  /auth/register:
+    post:
+      tags:
+        - Sign Up
+      summary: Creates a new user.
+      description: this post a new user to the database, the body takes a username, fullName, password and email. Errors are thrown if the username or email already exist in the database, that is has already been used by someone else.
+      operationId: registerUsers
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                fullName:
+                  type: string
+                password:
+                  type: string
+                email:
+                  type: string
+      responses:
+        "204": # status code
+          description: An Object with attributes of success, token and data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  token:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+  /auth/login:
+    post:
+      tags:
+        - Login
+      summary: Logs in a User, based on his credentials.
+      description: This endpoint logs in a user with his email and password.
+      operationId: loginUser
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        "204": # status code
+          description: An Object with properties of success and token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  token:
+                    type: string
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Returns a list of all users.
+      description: returns an object with attribute of users and value of arrays containing an object of users.
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  users:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                        username:
+                          type: string
+                        fullName:
+                          type: string
+                        email:
+                          type: string
+                        avatarUrl:
+                          type: string
+  /users/{userId}:
+    get:
+      tags:
+        - Users
+      summary: Get a user by ID.
+      description: Get a user by Id return an object with attribute of user, which has the attribut of id, username, fullname, email.
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /users/basket/{refUser}:
+    get:
+      tags:
+        - Baskets
+      summary: Get a Basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: An object with attribute basket, which contains an array of items associated to the userID
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  basket:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                        itemname:
+                          type: string
+                        description:
+                          type: string
+                        image:
+                          type: string
+                        price:
+                          type: string
+                        refItem:
+                          type: string
+                        refUser:
+                          type: string
+    post:
+      tags:
+        - Baskets
+      summary: Post an Item to a basket by userId.
+      description: This endpoint, adds an item, with refrence to a user to the basket. In the body, it takes an object with an attribute of id, which is the id of the item to be added to the basket.
+      operationId: postBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "204": # status code
+          description: An object with attribute of sentItem, containing details of the item posted to the database.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sentItem:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      itemname:
+                        type: string
+                      description:
+                        type: string
+                      image:
+                        type: string
+                      price:
+                        type: string
+                      refItem:
+                        type: string
+                      refUser:
+                        type: string
+    delete:
+      tags:
+        - Baskets
+      summary: Delete an Item to a basket by userId.
+      description: This endpoint deletes an item from the database.
+      operationId: deleteItemFromBasket
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  deletedItem:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      itemname:
+                        type: string
+                      description:
+                        type: string
+                      image:
+                        type: string
+                      price:
+                        type: string
+                      refItem:
+                        type: string
+                      refUser:
+                        type: string
+  /users/checkout/{refUser}:
+    get:
+      tags:
+        - Checkout
+      summary: Get a Basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+    post:
+      tags:
+        - Checkout
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+    delete:
+      tags:
+        - Checkout
+      summary: Delete an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /users/order/{refUser}:
+    get:
+      tags:
+        - Order
+      summary: Get a Basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+    post:
+      tags:
+        - Order
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+    delete:
+      tags:
+        - Order
+      summary: Delete an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /business:
+    get:
+      tags:
+        - Business
+      summary: Returns a list of all users.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    username:
+                      type: string
+                    fullName:
+                      type: string
+                    email:
+                      type: string
+                    avatarUrl:
+                      type: string
+    post:
+      tags:
+        - Business
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /business/{businessId}:
+    get:
+      tags:
+        - Business
+      summary: Get a user by ID.
+      description: Optional extended description in CommonMark or HTML.
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /items:
+    get:
+      tags:
+        - Items
+      summary: Returns a list of all users.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    username:
+                      type: string
+                    fullName:
+                      type: string
+                    email:
+                      type: string
+                    avatarUrl:
+                      type: string
+    post:
+      tags:
+        - Items
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /items/{itemId}:
+    get:
+      tags:
+        - Items
+      summary: Get a user by ID.
+      description: Optional extended description in CommonMark or HTML.
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /reviews:
+    get:
+      tags:
+        - Reviews
+      summary: Returns a list of all users.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    username:
+                      type: string
+                    fullName:
+                      type: string
+                    email:
+                      type: string
+                    avatarUrl:
+                      type: string
+    post:
+      tags:
+        - Reviews
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /reviews/{businessId}:
+    get:
+      tags:
+        - Reviews
+      summary: Get a user by ID.
+      description: Optional extended description in CommonMark or HTML.
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string

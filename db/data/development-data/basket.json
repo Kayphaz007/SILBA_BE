@@ -1,0 +1,34 @@
+[
+{
+    "itemname": "Vintage Vinyl Record Player",
+    "description": "Enjoy the warm sound of vinyl with this retro record player.",
+    "image": "record_player.jpg",
+    "price": 199.00,
+    "refUser": "64cba0aac546003ae9d78bf6", 
+    "refItem": "64ca6c7f0f05af461f3edc33"
+  },
+  {
+    "itemname": "Waterproof Hiking Backpack",
+    "description": "A durable backpack for all your hiking and outdoor adventures.",
+    "image": "hiking_backpack.jpg",
+    "price": 59.95,
+    "refUser": "64c8e8eebfee6b2a67d3d3d9",
+    "refItem": "64ca6c7f0f05af461f3edc34" 
+  },
+  {
+    "itemname": "Wireless Gaming Mouse",
+    "description": "A high-performance gaming mouse with customizable RGB lighting.",
+    "image": "gaming_mouse.jpg",
+    "price": 49.99,
+    "refUser": "64c8e8eebfee6b2a67d3d3d9", 
+    "refItem": "64ca6c7f0f05af461f3edc35"
+  },
+  {
+    "itemname": "Noise-Canceling Headphones",
+    "description": "Immerse yourself in music with these top-of-the-line noise-canceling headphones.",
+    "image": "headphones.jpg",
+    "price": 179.95,
+    "refUser": "64c8e8eebfee6b2a67d3d3da",
+    "refItem": "64ca6c7f0f05af461f3edc36"
+  }
+]

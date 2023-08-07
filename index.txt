@@ -1,0 +1,23 @@
+get marketplace items    -    brad
+get marketplace items by itemid   -   brad
+delete marketplace items by itemid   -  brad
+post item    -  brad
+item schema   - brad
+
+create reviews schema
+create items schema
+create blog post schema
+get all items
+get item by itemid
+post business
+post reviews
+get review by business itemid
+
+
+
+
+
+comments from merge
+- why the comments in seed.js?
+- should reviews, have 5 stars like amazon market?
+

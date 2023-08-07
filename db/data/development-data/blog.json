@@ -1,0 +1,26 @@
+[
+  {
+    "author": "John Doe",
+    "title": "Introduction to Node.js",
+    "votes": 10,
+    "body": "Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine.",
+    "img_url": "https://example.com/nodejs.png",
+    "createdAt": "2023-08-02T12:34:56.789Z"
+  },
+  {
+    "author": "Jane Smith",
+    "title": "React Hooks Tutorial",
+    "votes": 5,
+    "body": "React Hooks are a new addition to React that lets you use state and other React features without writing a class.",
+    "img_url": "https://example.com/react-hooks.png",
+    "createdAt": "2023-08-02T13:45:12.345Z"
+  },
+  {
+    "author": "David Johnson",
+    "title": "MongoDB Basics",
+    "votes": 15,
+    "body": "MongoDB is a NoSQL database that provides high performance, high availability, and easy scalability.",
+    "img_url": "https://example.com/mongodb.png",
+    "createdAt": "2023-08-02T14:56:32.678Z"
+  }
+]
