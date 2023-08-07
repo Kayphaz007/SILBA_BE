@@ -6,8 +6,20 @@ const {
   postItem,
   deleteItem,
 } = require("../controllers/items");
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "./uploads");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage });
 
-router.route("/").get(getAllItems).post(postItem);
-router.route("/:itemId").get(getItemById).delete(deleteItem);
+router.route("/").get(getAllItems);
+router.route("/:itemId").get(getItemById);
+router.route("/").post(upload.single("image"), postItem);
+router.route("/:itemId").delete(deleteItem);
 
 module.exports = router;
