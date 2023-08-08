@@ -20,30 +20,26 @@ exports.getAllBusiness = asyncWrapper(async (req, res, next) => {
 
 exports.postBusiness = asyncWrapper(async (req, res, next) => {
   const {
-    businessName,
+    business_name,
     location,
     address,
     images,
     long_description,
     description,
     category,
-    business_rating,
-    business_id,
-    votes,
-    review_count,
+    ownerName,
+    ownerUserId,
   } = req.body;
   const newBusiness = await Business.create({
     business_name,
     location,
     address,
     images,
-    description,
     long_description,
+    description,
     category,
-    business_rating,
-    business_id,
-    votes,
-    review_count,
+    ownerName,
+    ownerUserId,
   });
   res.status(200).send({ newBusiness });
 });
