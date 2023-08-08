@@ -1,7 +1,11 @@
 [
     {
       "business_name": "Where The Light Gets In",
-      "location": { "latitude": 53.411006, "longitude": -2.1561017 },
+     
+      "location": {
+        "type": "Point",
+        "coordinates": [53.411006, -2.1561017]
+      },
       "address": "7 Rostron Brow, Stockport SK1 1JY, UK",
       "website": "https://www.wtlgi.co/",
       "images": ["https://offloadmedia.feverup.com/secretmanchester.com/wp-content/uploads/2021/01/27043957/where-the-light-gets-in.png", "https://i.guim.co.uk/img/media/e942e99a9a3a2e719651176f228836f3370313be/0_69_5328_3197/master/5328.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=95da05f0f4cba2bfa0c9593fe934a401"],
@@ -15,7 +19,10 @@
     },
     {
       "business_name": "The Sparrows",
-      "location": { "latitude": 53.4898, "longitude": -2.2383 },
+      "location":{ 
+      "type": "Point",
+      "coordinates": [53.4898, -2.2383]
+    },
       "address": "16 Red Bank, Cheetham Hill, Manchester M4 4HF, United Kingdom",
       "images": ["https://i2-prod.manchestereveningnews.co.uk/incoming/article16075114.ece/ALTERNATES/s615b/0_DJ_MEN_040419Sparrows_06JPG.jpg", "https://confidentials.com/uploads/imager/299deb39facbb0c50fa0371390d9cd0c/1098974/afdd10b7e56cb41fcce6d4eeb54ebc94.JPG"],
       "description": "Casual choice serving international drinks & pasta dishes in a Zen-like setting with a brick patio.",
@@ -28,7 +35,10 @@
     },
     {
       "business_name": "Erst",
-      "location": { "latitude": 53.477867, "longitude": -2.239147 },
+      "location": { 
+        "type": "Point",
+        "coordinates":[53.477867, -2.239147]
+      },
       "address": "9 Murray St, Ancoats, Manchester M4 6HS, United Kingdom",
       "images": ["https://images.squarespace-cdn.com/content/v1/5d6bf35965a29d0001bb6812/1569238348851-RJS57QS5V39GVY93VFU3/JM-ERST-4-4-19-17.JPG", "https://i.guim.co.uk/img/media/eec15c18116b2e2bd4f9873156290e635af62a27/0_216_5472_3283/master/5472.jpg?width=700&quality=85&auto=format&fit=max&s=ec8685e081589424834cc7642f17ff43"],
       "description": "Seasonal small plates & natural wine offered in a contemporary restaurant & bar.",
@@ -41,7 +51,10 @@
     },
     {
       "business_name": "Unitom",
-      "location": { "latitude": 53.4829, "longitude": -2.2339 },
+      "location": { 
+        "type": "Point",
+        "coordinates":[53.4829, -2.2339 ]
+      },
       "address": "1a Stevenson Square, Manchester M1 1DN, United Kingdom",
       "images": ["https://d2joqs9jfh6k92.cloudfront.net/wp-content/uploads/2023/06/03140158/unitom-mcrfinest-2022-25-1200x801.jpg", "https://www.thestateofthearts.co.uk/wp-content/uploads/2022/02/008-scaled.jpeg"],
       "description": "Visual arts orientated bookshop and print/editions gallery offering a hand-picked selection of cultural inspiration",
@@ -54,7 +67,10 @@
     },
     {
       "business_name": "Deadstock General Store",
-      "location": { "latitude": 53.4843, "longitude": -2.2366 },
+      "location": { 
+        "type": "Point",
+        "coordinates": [53.4843, -2.236]
+      },
       "address": "48 Edge St, Manchester M4 1HN, United Kingdom",
       "images": ["https://northernquarter.s3.eu-west-2.amazonaws.com/app/uploads/2022/03/02143632/deadstock-general-store-1-1470x770.jpg", "https://northernquarter.s3.eu-west-2.amazonaws.com/app/uploads/2022/03/02143722/deadstock-general-store-11-1200x800.jpg", "shop4.jpg"],
       "description": "A curated selection of homewares, accessories and gifts based in Manchester",
@@ -67,7 +83,10 @@
     },
     {
       "business_name": "The Vintage Emporium Stockport",
-      "location": { "latitude": 53.423581, "longitude": -2.113764 },
+      "location": { 
+        "type": "Point",
+        "coordinates":[53.423581, -2.113764]
+      },
       "address": "Unit B1, Pear Mill Industrial Estate, Stockport Rd W, Bredbury, Stockport SK6 2BP, United Kingdom",
       "images": ["https://media-cdn.tripadvisor.com/media/photo-m/1280/19/a7/80/b9/the-vintage-emporium.jpg", "https://i2-prod.manchestereveningnews.co.uk/incoming/article9099806.ece/ALTERNATES/s1227b/JS61916133.jpg"],
       "description": "Antique and vintage market",
@@ -80,7 +99,10 @@
     },
     {
       "business_name": "Clay Studio",
-      "location": { "latitude": 53.4655, "longitude": -2.2483 },
+      "location": { 
+        "type": "Point",
+        "coordinates":[53.4655, -2.2483 ]
+      },
       "address": "61 Old Birley St, Hulme, Manchester M15 5RF, United Kingdom",
       "images": ["https://images.unsplash.com/photo-1508269151431-a34449ca161d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTc3M3wwfDF8c2VhcmNofDN8fHBvdHRlcnl8ZW58MHx8fHwxNjMyMTI5MTE2&ixlib=rb-1.2.1&q=80&w=2000", "https://pedddle.com/wp-content/uploads/2022/05/clay2021-27.jpg"],
       "description": "Clay Studio is an open and welcoming space for ceramicists, hobbyists and those curious and keen to explore pottery. ",
@@ -93,7 +115,10 @@
     },
     {
       "business_name": "Pendant Carving Workshop at Where The Light Gets In",
-      "location": { "latitude": 53.4109297, "longitude": -2.1559864 },
+      "location":{ 
+        "type": "Point",
+        "coordinates":[53.4109297, -2.1559864 ]
+      },
       "address": "7 Rostron Brow, Stockport SK1 1JY, UK",
       "website": "https://www.wtlgi.co/",
       "images": ["https://images.squarespace-cdn.com/content/v1/5c61dbfd51f4d43e0bc49587/1688464927264-AJEXUCBBJ5YZOISJ79OM/Ara+the+altar+workshop+-+student+examples.jpg?format=500w", "https://images.squarespace-cdn.com/content/v1/5c61dbfd51f4d43e0bc49587/1681973658748-A7PYTF6NAYGF0TOW6566/Ara+the+altar+-+workshop+-+2+-+create+i+-+with+text.png?format=500w"],
@@ -107,7 +132,9 @@
     },
     {
       "business_name": "CHA-OLOGY",
-      "location": { "latitude": 53.483304, "longitude": -2.229617 },
+      "location": { 
+        "type": "Point",
+        "coordinates":[53.483304, -2.229617 ]},
       "address": "Unit 3B Nuovo, Great Ancoats St, Manchester M4 5AB, United Kingdom",
       "website": "https://www.cha-ology.com/",
       "images": ["https://confidentialguides-com.s3.eu-west-1.amazonaws.com/app/uploads/2019/01/chaology-2.jpg", "https://static1.squarespace.com/static/560af446e4b067a3343ac5c1/563bc098e4b08fe45c32aa18/5ba79ef2c83025fa567a37ef/1614195320262/Cha-Ology+Manchester+LR-3.jpg?format=1500w"],

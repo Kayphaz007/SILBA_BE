@@ -19,27 +19,27 @@ exports.getAllBusiness = async (req, res, next) => {
 };
 
 exports.postBusiness = async (req, res, next) => {
-  const { businessName,
+  const { business_name,
     location,
     address,
     images,
     long_description,
     description,
     category,
-    businessRating,
-    businessId,
+    business_rating,
+    business_id,
     votes,
-    reviewCount } = req.body;
-  const newBusiness = await Business.create({ businessName, 
+    review_count } = req.body;
+  const newBusiness = await Business.create({ business_name, 
     location, 
     address, 
     images, 
     description, 
     long_description,
     category, 
-    businessRating,
-    businessId, 
+    business_rating,
+    business_id, 
     votes, 
-    reviewCount })
+    review_count })
     res.status(200).send({newBusiness})
 };
