@@ -34,7 +34,7 @@ exports.postBusiness = async (req, res, next) => {
     address, 
     images, 
     description, 
-    category, 
+    category,  
     businessRating,
     businessId, 
     votes, 
