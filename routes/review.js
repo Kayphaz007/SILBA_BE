@@ -7,7 +7,7 @@ const {
   changeVotesByOne,
 } = require("../controllers/review");
 
-router.route("/").get(getReviews).post(postReview);
+router.route("/").get(getReviews).post(postReviews);
 
 router.route("/:businessId").get(getReviewById);
 

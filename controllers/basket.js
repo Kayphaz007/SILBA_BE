@@ -1,13 +1,14 @@
+const asyncWrapper = require("../middleware/async");
 const Basket = require("../models/basketSchema");
 const Item = require("../models/itemSchema");
 
-exports.getBasketByUserId = async (req, res, next) => {
+exports.getBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const basket = await Basket.find({ refUser: refUser });
   res.status(200).send({ basket });
-};
+});
 
-exports.postBasketByUserId = async (req, res, next) => {
+exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const { id } = req.body;
   const findItem = await Item.findById(id);
@@ -21,9 +22,9 @@ exports.postBasketByUserId = async (req, res, next) => {
     refUser: refUser,
   });
   res.status(204).send({ sentItem });
-};
+});
 
-exports.deleteItemFromBasket = async (req, res, next) => {
+exports.deleteItemFromBasket = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const { id } = req.body;
   const deletedItem = await Basket.findOneAndDelete({
@@ -31,4 +32,4 @@ exports.deleteItemFromBasket = async (req, res, next) => {
     refItem: id,
   });
   res.status(200).send({ success: true, deletedItem });
-};
+});
