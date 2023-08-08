@@ -30,8 +30,10 @@ exports.postBusiness = asyncWrapper(async (req, res, next) => {
     business_rating,
     business_id,
     votes,
-    review_count } = req.body;
-  const newBusiness = await Business.create({ business_name,
+    review_count,
+  } = req.body;
+  const newBusiness = await Business.create({
+    business_name,
     location,
     address,
     images,
@@ -41,6 +43,7 @@ exports.postBusiness = asyncWrapper(async (req, res, next) => {
     business_rating,
     business_id,
     votes,
-    review_count })
-    res.status(200).send({newBusiness})
-};
+    review_count,
+  });
+  res.status(200).send({ newBusiness });
+});
