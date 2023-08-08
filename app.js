@@ -10,10 +10,11 @@ const businessRouter = require("./routes/business");
 const itemRouter = require("./routes/items");
 const { errorHandlerMiddleware } = require("./middleware/error-handler");
 
-const authRouter = require("./routes/auth");
-const reviewsRouter = require("./routes/review");
-const blogRouter = require("./routes/blog");
-const checkoutRouter = require("./routes/checkout");
+const authRouter = require('./routes/auth')
+const reviewsRouter = require('./routes/review')
+const blogRouter = require('./routes/blog')
+const checkoutRouter = require('./routes/checkout')
+const stripeRouter = require('./routes/stripe')
 
 //middleware
 app.use(express.json());
@@ -43,6 +44,8 @@ app.use("/api/reviews", reviewsRouter);
 
 app.use("/api/blogs", blogRouter);
 
+app.use('/api/checkout', checkoutRouter)
+app.use('/api/payment', stripeRouter)
 app.use(errorHandlerMiddleware);
 
 module.exports = app;

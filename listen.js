@@ -10,7 +10,7 @@ const swaggerDocument = YAML.parse(file);
 app.use(cors());
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-const PORT = 9090;
+const PORT = 3000;
 
 app.listen(PORT, () => {
   console.log(`Server is Running on port ${PORT}....`);
