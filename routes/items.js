@@ -5,6 +5,7 @@ const {
   getItemById,
   postItem,
   deleteItem,
+  patchItemPrice,
 } = require("../controllers/items");
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -21,5 +22,6 @@ router.route("/").get(getAllItems);
 router.route("/:itemId").get(getItemById);
 router.route("/").post(upload.single("image"), postItem);
 router.route("/:itemId").delete(deleteItem);
+router.route("/:itemId").patch(patchItemPrice)
 
 module.exports = router;
