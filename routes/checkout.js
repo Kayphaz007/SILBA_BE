@@ -8,7 +8,7 @@ const router = express.Router();
 
 // routes for checkouts
 router
-  .route("/:refUser")
+  .route("/:buyerId")
   .get(getCheckoutByUserId)
   .post(postCheckoutByUserId)
   .delete(deleteItemFromCheckout);
