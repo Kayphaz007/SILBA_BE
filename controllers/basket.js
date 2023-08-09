@@ -16,7 +16,6 @@ exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { buyerId } = req.params;
   const { itemId } = req.body;
   const findItem = await Item.findById(itemId);
-  console.log("hello");
   if (!findItem) {
     console.log({ findItem });
     return Promise.reject("Item not found");
@@ -58,11 +57,10 @@ exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
 });
 
 exports.deleteItemFromBasket = asyncWrapper(async (req, res, next) => {
-  const { refUser } = req.params;
-  const { id } = req.body;
-  const deletedItem = await Basket.findOneAndDelete({
-    refUser: refUser,
-    refItem: id,
-  });
-  res.status(200).send({ success: true, deletedItem });
+  const { buyerId } = req.params;
+  const { basketId } = req.body;
+  const deletedItem = await Basket.findByIdAndDelete(
+    basketId
+  );
+  res.status(200).send({ success: true, deletedItem});
 });
