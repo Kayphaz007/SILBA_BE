@@ -330,9 +330,9 @@ paths:
       description: This endpoint, adds an item, with refrence to a user to the basket. In the body, it takes an object with an attribute of id, which is the id of the item to be added to the basket.
       operationId: postBasketByUserId
       parameters:
-        - name: userId
+        - name: buyerId
           in: path
-          description: User ID
+          description: BUYER ID
           required: true
           schema:
             type: string
@@ -343,7 +343,7 @@ paths:
             schema:
               type: object
               properties:
-                id:
+                itemId:
                   type: string
       responses:
         "204": # status code
@@ -377,9 +377,9 @@ paths:
       description: This endpoint deletes an item from the database.
       operationId: deleteItemFromBasket
       parameters:
-        - name: userId
+        - name: buyerId
           in: path
-          description: User ID
+          description: buyer ID
           required: true
           schema:
             type: string
@@ -390,7 +390,7 @@ paths:
             schema:
               type: object
               properties:
-                id:
+                basketId:
                   type: string
       responses:
         "200": # status code
