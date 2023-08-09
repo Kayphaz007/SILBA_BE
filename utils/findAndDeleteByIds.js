@@ -1,9 +1,9 @@
 // this function takes in a schema and an array of ids
 
-exports.findAndDeleteByIds = async (schema, [...arrayOfIds], refUser) => {
+exports.findAndDeleteByIds = async (schema, [...arrayOfIds], buyerId) => {
   try {
     const findArrayOfItemsByID = arrayOfIds.map(async (id) => {
-      return schema.findOne({ refItem: id, refUser });
+      return schema.findOne({ _id: id, buyerId });
     });
     const items = await Promise.all(findArrayOfItemsByID);
     // to check that all items are not null i.e they are in the schema sent
@@ -13,7 +13,7 @@ exports.findAndDeleteByIds = async (schema, [...arrayOfIds], refUser) => {
       })
     ) {
       const deleteArrayOfPromise = arrayOfIds.map(async (id) => {
-        return schema.deleteOne({ refItem: id, refUser });
+        return schema.deleteOne({ _id: id, buyerId });
       });
       await Promise.all(deleteArrayOfPromise);
     } else {
