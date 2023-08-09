@@ -28,7 +28,6 @@ exports.postItem = asyncWrapper(async (req, res, next) => {
     resource_type: "image",
     folder: "silba-project",
   });
-  console.log(result);
 
   const item = await Item.create({
     itemname,

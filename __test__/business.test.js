@@ -18,16 +18,13 @@ xdescribe("GET /api/business", () => {
     return request(app)
       .get("/api/business")
       .expect(200)
-      .then(({ body: { business } }) => {
-        console.log({ business });
-      });
+      .then(({ body: { business } }) => {});
   });
 });
 
 xdescribe("GET /api/business/:business_id", () => {
   test("should get business by id", async () => {
     const business = await Business.find({});
-    // console.log(business);
     return request(app)
       .get(`/api/business/${business[0]._id}`)
       .expect(200)

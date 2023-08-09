@@ -2,16 +2,20 @@ const asyncWrapper = require("../middleware/async");
 const Basket = require("../models/basketSchema");
 const Item = require("../models/itemSchema");
 
+exports.getAllItemsInBasket = asyncWrapper(async (req, res, next) => {
+  const basket = await Basket.find({});
+  res.status(200).send({ basket });
+});
 exports.getBasketByUserId = asyncWrapper(async (req, res, next) => {
-  const { refUser } = req.params;
-  const basket = await Basket.find({ refUser });
+  const { buyerId } = req.params;
+  const basket = await Basket.find({ buyerId });
   res.status(200).send({ basket });
 });
 
 exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
-  const { refUser } = req.params;
-  const { id } = req.body;
-  const findItem = await Item.findById(id);
+  const { buyerId } = req.params;
+  const { itemId } = req.body;
+  const findItem = await Item.findById(itemId);
   if (!findItem) {
     return Promise;
   }

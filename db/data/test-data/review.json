@@ -1,0 +1,157 @@
+[
+  {
+    "review": "This product is awesome!",
+    "createdAt": "2023-08-02T12:34:56.789Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Could be better",
+    "createdAt": "2023-08-02T12:45:32.123Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Impressive quality!",
+    "createdAt": "2023-08-03T10:15:27.456Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Not worth the price",
+    "createdAt": "2023-08-04T15:20:10.987Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Excellent customer service",
+    "createdAt": "2023-08-05T08:45:00.000Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Average product, decent price",
+    "createdAt": "2023-08-06T17:30:42.159Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Highly recommended!",
+    "createdAt": "2023-08-07T14:12:34.567Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Not as described",
+    "createdAt": "2023-08-08T09:18:23.456Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Best value for money",
+    "createdAt": "2023-08-09T11:11:11.111Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Needs improvement",
+    "createdAt": "2023-08-10T13:13:13.131Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Great packaging",
+    "createdAt": "2023-08-11T16:16:16.161Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Terrible experience",
+    "createdAt": "2023-08-12T19:19:19.191Z",
+    "review_votes": 1
+  },
+  {
+    "review": "Exactly as expected",
+    "createdAt": "2023-08-13T22:22:22.222Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Not recommended",
+    "createdAt": "2023-08-14T23:59:59.999Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Highly satisfied!",
+    "createdAt": "2023-08-15T14:30:15.678Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Could improve customer support",
+    "createdAt": "2023-08-16T08:05:45.321Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Worth every penny",
+    "createdAt": "2023-08-17T17:45:30.987Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Misleading description",
+    "createdAt": "2023-08-18T11:22:33.444Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Outstanding product!",
+    "createdAt": "2023-08-19T09:15:30.159Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Average quality",
+    "createdAt": "2023-08-20T14:30:15.678Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Top-notch service",
+    "createdAt": "2023-08-21T12:00:00.000Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Disappointed with delivery time",
+    "createdAt": "2023-08-22T16:45:30.987Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Met my expectations",
+    "createdAt": "2023-08-23T10:30:15.678Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Not worth the hype",
+    "createdAt": "2023-08-24T14:45:30.987Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Great value for the price",
+    "createdAt": "2023-08-25T11:11:11.111Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Poor quality control",
+    "createdAt": "2023-08-26T08:08:08.080Z",
+    "review_votes": 1
+  },
+  {
+    "review": "Extremely satisfied!",
+    "createdAt": "2023-08-27T15:30:45.678Z",
+    "review_votes": 5
+  },
+  {
+    "review": "Could use more variety",
+    "createdAt": "2023-08-28T09:30:30.159Z",
+    "review_votes": 3
+  },
+  {
+    "review": "Impressed with the product",
+    "createdAt": "2023-08-29T12:45:30.987Z",
+    "review_votes": 4
+  },
+  {
+    "review": "Not up to expectations",
+    "createdAt": "2023-08-30T11:00:00.000Z",
+    "review_votes": 2
+  },
+  {
+    "review": "Great customer experience",
+    "createdAt": "2023-08-31T14:30:15.678Z",
+    "review_votes": 5
+  }
+]

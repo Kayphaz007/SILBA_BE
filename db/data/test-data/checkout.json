@@ -1,0 +1,27 @@
+[
+    {
+        "itemname": "Vintage Vinyl Record Player",
+        "image": "record_player.jpg",
+        "price": 199.00,
+        "refUser": "64cba0aac546003ae9d78bf6"
+      },
+      {
+        "itemname": "Waterproof Hiking Backpack",
+        "image": "hiking_backpack.jpg",
+        "price": 59.95,
+        "refUser": "64c8e8eebfee6b2a67d3d3d9"
+
+      },
+      {
+        "itemname": "Wireless Gaming Mouse",
+        "image": "gaming_mouse.jpg",
+        "price": 49.99,
+        "refUser": "64c8e8eebfee6b2a67d3d3d9"
+      },
+      {
+        "itemname": "Noise-Canceling Headphones",
+        "image": "headphones.jpg",
+        "price": 179.95,
+        "refUser": "64c8e8eebfee6b2a67d3d3da"
+      }
+    ]

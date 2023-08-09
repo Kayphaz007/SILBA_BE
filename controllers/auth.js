@@ -3,7 +3,6 @@ const ErrorResponse = require("../utils/errorResponse");
 
 exports.registerUsers = async (req, res, next) => {
   const { username, fullName, password, email } = req.body;
-  console.log(req.body);
   const user = await User.create({ username, fullName, password, email });
 
   const token = user.getSignedJwtToken();
@@ -25,7 +24,6 @@ exports.loginUser = async (req, res, next) => {
 
   const passwordMatcher = await user.matchPassword(password);
 
-  console.log(passwordMatcher);
   if (!passwordMatcher) {
     return next(new ErrorResponse("Invalid credentials"), 401);
   }

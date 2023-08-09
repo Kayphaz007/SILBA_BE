@@ -19,12 +19,10 @@ describe("Get /api/users", () => {
       return request(app)
         .get("/api/users")
         .expect(200)
-        .then(({ body: { users } }) => {
-          console.log({ users });
-        });
+        .then(({ body: { users } }) => {});
     });
   });
-  fdescribe("Get /api/user/:userId", () => {
+  describe("Get /api/user/:userId", () => {
     test("should get user by id", async () => {
       const user = await User.find({});
       return request(app)
