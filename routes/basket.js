@@ -4,6 +4,7 @@ const {
   getBasketByUserId,
   postBasketByUserId,
   deleteItemFromBasket,
+  patchItemQuantityInBasket,
 } = require("../controllers/basket");
 const router = express.Router();
 
@@ -13,6 +14,7 @@ router
   .route("/:buyerId")
   .get(getBasketByUserId)
   .post(postBasketByUserId)
+  .patch(patchItemQuantityInBasket)
   .delete(deleteItemFromBasket);
 
 module.exports = router;

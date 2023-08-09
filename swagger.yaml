@@ -370,6 +370,55 @@ paths:
                         type: string
                       refUser:
                         type: string
+    patch:
+      tags:
+        - Baskets
+      summary: increase or decrease the quantity of an item in basket.
+      description: This endpoint, increases or decreases the quantity of item in a basket. the endpoint increases by 1, to increase create an object with attribute of quantity and its value, +1 or -1 to increase or decrease.
+      operationId: patchItemQuantityInBasket
+      parameters:
+        - name: buyerId
+          in: path
+          description: BUYER ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                itemId:
+                  type: string
+                quantity:
+                  type: string
+      responses:
+        "200": # status code
+          description: An object with attribute of sentItem, containing details of the item posted to the database.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sentItem:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      itemname:
+                        type: string
+                      description:
+                        type: string
+                      image:
+                        type: string
+                      price:
+                        type: string
+                      quantity:
+                        type: string
+                      refUser:
+                        type: string
     delete:
       tags:
         - Baskets
