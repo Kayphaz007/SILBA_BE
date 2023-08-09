@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 
 const basketSchema = new mongoose.Schema({
+  sellerBusinessName: {
+    type: String,
+    required: true,
+  },
+  sellerUsername: {
+    type: String,
+    required: true,
+  },
   itemName: {
     type: String,
     required: true,
