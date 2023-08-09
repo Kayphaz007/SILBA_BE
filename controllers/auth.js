@@ -7,7 +7,7 @@ exports.registerUsers = async (req, res, next) => {
 
   const token = user.getSignedJwtToken();
 
-  res.status(204).send({ success: true, token, data: user });
+  res.status(200).send({ success: true, token, data: user });
 };
 
 exports.loginUser = async (req, res, next) => {
@@ -30,5 +30,5 @@ exports.loginUser = async (req, res, next) => {
 
   const token = user.getSignedJwtToken();
 
-  res.status(204).send({ success: true, token });
+  res.status(200).send({ success: true, token, data: user });
 };

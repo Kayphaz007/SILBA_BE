@@ -6,9 +6,9 @@ const mongoose = require("mongoose");
 const testData = require("../db/data/test-data");
 const User = require("../models/userSchema");
 
-beforeEach(async () => {
-  await seed(testData);
-});
+// beforeEach(async () => {
+//   await seed(testData);
+// });
 afterAll(() => {
   mongoose.connection.close();
 });
@@ -19,7 +19,9 @@ describe("Get /api/users", () => {
       return request(app)
         .get("/api/users")
         .expect(200)
-        .then(({ body: { users } }) => {});
+        .then(({ body: { users } }) => {
+          expect(users.length).toBe(24);
+        });
     });
   });
   describe("Get /api/user/:userId", () => {
@@ -37,6 +39,10 @@ describe("Get /api/users", () => {
             expect(user_id).toBe(user[0]._id.toString());
           }
         );
+    });
+    test("should give an error for wrong userId", async () => {
+      const user = await User.find({});
+      return request(app).get(`/api/users/hello45535`).expect(400);
     });
   });
 });

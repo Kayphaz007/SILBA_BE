@@ -19,6 +19,8 @@ exports.getAllBusiness = asyncWrapper(async (req, res, next) => {
 });
 
 exports.postBusiness = asyncWrapper(async (req, res, next) => {
+  console.log("hello");
+  let { ownerId: ownerUserId } = req.params;
   const {
     business_name,
     location,
@@ -28,8 +30,8 @@ exports.postBusiness = asyncWrapper(async (req, res, next) => {
     description,
     category,
     ownerName,
-    ownerUserId,
   } = req.body;
+  console.log(req.body, req.params);
   const newBusiness = await Business.create({
     business_name,
     location,
