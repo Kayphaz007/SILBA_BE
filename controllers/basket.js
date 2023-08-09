@@ -56,6 +56,21 @@ exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
   res.status(200).send({ sentItem });
 });
 
+exports.patchItemQuantityInBasket = asyncWrapper(async (req, res, next) => {
+  const { buyerId } = req.params;
+  const { itemId: _id, quantity } = req.body;
+  let { quantity: itemQuantity } = await Basket.findOne({ buyerId, _id });
+  if (+quantity > 0 && itemQuantity >= 0) {
+    itemQuantity += 1;
+  } else if (+quantity < 0 && itemQuantity > 0) {
+    itemQuantity -= 1;
+  }
+  let itemInBasket = await Basket.findByIdAndUpdate(_id, {
+    quantity: itemQuantity,
+  });
+  res.status(200).send({ sucess: true, itemInBasket });
+});
+
 exports.deleteItemFromBasket = asyncWrapper(async (req, res, next) => {
   const { buyerId } = req.params;
   const { basketId: _id } = req.body;
