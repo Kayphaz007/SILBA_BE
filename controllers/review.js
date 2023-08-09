@@ -21,7 +21,6 @@ exports.postReviews = asyncWrapper(async (req, res, next) => {
 exports.getReviewById = asyncWrapper(async (req, res, next) => {
   const { businessId } = req.params;
   const reviews = await Reviews.find({ business: businessId });
-  console.log(reviews);
   res.status(200).send({ reviews });
 });
 

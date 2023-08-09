@@ -40,7 +40,6 @@ const seed = async (data) => {
       };
     });
     await Business.create(newBusinessJson);
-    // console.log(newBusinessJson);
 
     // get all business id
     let allBusiness = await Business.find();

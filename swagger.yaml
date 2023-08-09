@@ -149,7 +149,7 @@ paths:
                         type: string
                       avatarUrl:
                         type: string
-  /users/basket/{refUser}:
+  /basket/{buyerId}:
     get:
       tags:
         - Baskets
@@ -157,9 +157,9 @@ paths:
       description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
       operationId: getBasketByUserId
       parameters:
-        - name: userId
+        - name: buyerId
           in: path
-          description: User ID
+          description: Buyer ID
           required: true
           schema:
             type: string
