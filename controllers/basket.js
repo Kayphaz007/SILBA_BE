@@ -4,7 +4,7 @@ const Item = require("../models/itemSchema");
 
 exports.getBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
-  const basket = await Basket.find({ refUser: refUser });
+  const basket = await Basket.find({ refUser });
   res.status(200).send({ basket });
 });
 
@@ -12,6 +12,9 @@ exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const { id } = req.body;
   const findItem = await Item.findById(id);
+  if (!findItem) {
+    return Promise;
+  }
   const { itemname, description, image, price } = findItem;
   const sentItem = await Basket.create({
     itemname,

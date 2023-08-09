@@ -1,30 +1,62 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
-  itemname: {
+  itemName: {
     type: String,
     required: true,
   },
-  description: {
+  itemDescription: {
     type: String,
     required: true,
   },
-  image: {
+  itemImage: {
+    type: String,
+    // required: true,
+  },
+  itemLocation: {
     type: String,
     required: true,
   },
-  // quantity attributes for items
-  price: {
+
+  addressForCollection: {
+    type: String,
+    // required: true,
+  },
+  itemPrice: {
     type: Number,
     required: true,
   },
-  refUser: {
+  itemRating: {
+    type: Number,
+    required: true,
+  },
+  stockCount: {
+    type: Number,
+    required: true,
+  },
+  quantity: {
+    type: Number,
+    required: true,
+  },
+
+  deliveryOrCollection: {
+    type: String,
+    enum: ["Delivery", "Collection"],
+    required: true,
+  },
+  sellerId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
-  refItem: {
+  buyerId: {
     type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
+  businessId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Business",
     required: true,
   },
 });

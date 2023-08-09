@@ -8,14 +8,14 @@ exports.getReviews = async (req, res, next) => {
 };
 
 exports.postReviews = asyncWrapper(async (req, res, next) => {
-  const { reviews, reviewVote, business, user } = req.body;
-  const review = await Reviews.create({
-    reviews,
+  const { review, reviewVote, business, user } = req.body;
+  const reviewData = await Reviews.create({
+    review,
     reviewVote,
     business,
     user,
   });
-  res.status(200).send({ success: true, data: review });
+  res.status(200).send({ success: true, data: reviewData });
 });
 
 exports.getReviewById = asyncWrapper(async (req, res, next) => {

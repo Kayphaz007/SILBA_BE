@@ -1,5 +1,7 @@
 const asyncWrapper = require("../middleware/async");
+const Business = require("../models/businessSchema");
 const Item = require("../models/itemSchema");
+const User = require("../models/userSchema");
 const cloudinary = require("cloudinary").v2;
 
 cloudinary.config({
@@ -9,8 +11,8 @@ cloudinary.config({
 });
 
 exports.getAllItems = asyncWrapper(async (req, res, next) => {
-  const item = await Item.find({});
-  res.status(200).send({ item });
+  const items = await Item.find({});
+  res.status(200).send({ items });
 });
 
 exports.getItemById = asyncWrapper(async (req, res, next) => {

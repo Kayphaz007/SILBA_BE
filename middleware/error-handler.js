@@ -1,8 +1,9 @@
-
-
 const errorHandlerMiddleware = async (err, req, res, next) => {
-console.log(err)
-return res.status(500).json({msg: "Something went wrong"})
-}
+  let msg = "Something went wrong";
+  if (err.name == "CastError") {
+    msg = "Used wrong Id";
+  }
+  return res.status(500).json({ msg, err });
+};
 
-module.exports = {errorHandlerMiddleware}
+module.exports = { errorHandlerMiddleware };

@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const businessSchema = new mongoose.Schema({
   business_name: { type: String, required: true },
+  ownerName: { type: String, required: true },
   location: {
     type: {
       type: String,
@@ -10,22 +11,26 @@ const businessSchema = new mongoose.Schema({
     },
     coordinates: {
       type: [Number],
-      required: true,
     },
   },
-  address: { type: String, required: true },
-  images: { type: [String], required: true },
-  description: { type: String, required: true },
-  long_description: {type: String},
+  address: { type: String },
+  images: { type: [String] },
+  description: { type: String },
+  long_description: { type: String },
   category: {
     type: String,
     enum: ["shop", "restaurant", "experience"],
     required: true,
   },
   business_id: { type: String, required: true },
-  business_rating: { type: Number, required: true },
-  votes: { type: Number, required: true },
-  review_count: { type: Number, required: true },
+  business_rating: { type: Number, default: 5 },
+  votes: { type: Number, default: 0 },
+  review_count: { type: Number, default: 0 },
+  ownerUserId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+    required: true,
+  },
 });
 
 const Business = mongoose.model("Business", businessSchema);
