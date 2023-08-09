@@ -8,12 +8,12 @@ exports.getReviews = async (req, res, next) => {
 };
 
 exports.postReviews = asyncWrapper(async (req, res, next) => {
-  const { review, reviewVote, business, user } = req.body;
+  const { username, review, businessId, userId } = req.body;
   const reviewData = await Reviews.create({
+    username,
     review,
-    reviewVote,
-    business,
-    user,
+    businessId,
+    userId,
   });
   res.status(200).send({ success: true, data: reviewData });
 });
@@ -29,9 +29,9 @@ exports.changeVotesByOne = asyncWrapper(async (req, res, next) => {
   const { voteUpdate } = req.body;
   const review = await Reviews.findById(reviewId);
   if (voteUpdate === "increase") {
-    review.reviewVote += 1;
+    review.review_votes += 1;
   } else if (voteUpdate === "decrease") {
-    review.reviewVote -= 1;
+    review.review_votes -= 1;
   }
   await review.save();
   res.status(200).send({ "Review vote complete": review });
