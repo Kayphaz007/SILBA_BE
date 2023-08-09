@@ -16,19 +16,45 @@ exports.postBasketByUserId = asyncWrapper(async (req, res, next) => {
   const { buyerId } = req.params;
   const { itemId } = req.body;
   const findItem = await Item.findById(itemId);
+  console.log("hello");
   if (!findItem) {
-    return Promise;
+    console.log({ findItem });
+    return Promise.reject("Item not found");
   }
-  const { itemname, description, image, price } = findItem;
+
+  let {
+    sellerId,
+    sellerBusinessName,
+    sellerUsername,
+    itemName,
+    itemDescription,
+    itemImage,
+    itemLocation,
+    addressForCollection,
+    itemPrice,
+    itemRating,
+    stockCount,
+    deliveryOrCollection,
+    businessId,
+  } = findItem;
+  // console.log(findItem._id);
   const sentItem = await Basket.create({
-    itemname,
-    description,
-    image,
-    price,
-    refItem: id,
-    refUser: refUser,
+    sellerId,
+    sellerBusinessName,
+    sellerUsername,
+    itemName,
+    itemDescription,
+    itemImage,
+    itemLocation,
+    addressForCollection,
+    itemPrice,
+    itemRating,
+    stockCount,
+    deliveryOrCollection,
+    businessId,
+    buyerId,
   });
-  res.status(204).send({ sentItem });
+  res.status(200).send({ sentItem });
 });
 
 exports.deleteItemFromBasket = asyncWrapper(async (req, res, next) => {

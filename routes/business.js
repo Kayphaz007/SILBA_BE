@@ -6,7 +6,8 @@ const {
   postBusiness,
 } = require("../controllers/business");
 
-router.route("/").get(getAllBusiness).post(postBusiness);
+router.route("/").get(getAllBusiness);
 router.route("/:businessId").get(getBusinessById);
+router.route("/:ownerId").post(postBusiness);
 
 module.exports = router;

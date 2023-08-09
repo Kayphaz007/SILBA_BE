@@ -22,7 +22,6 @@ const businessSchema = new mongoose.Schema({
     enum: ["shop", "restaurant", "experience"],
     required: true,
   },
-  business_id: { type: String, required: true },
   business_rating: { type: Number, default: 5 },
   votes: { type: Number, default: 0 },
   review_count: { type: Number, default: 0 },

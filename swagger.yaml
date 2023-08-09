@@ -6,7 +6,7 @@ info:
 servers:
   - url: https://silba-be.onrender.com/api
     description: Main Production Server
-  - url: https://localhost:9090/api
+  - url: http://localhost:9090/api
     description: Internal Staging server for development
 
 paths:
@@ -128,6 +128,139 @@ paths:
           required: true
           schema:
             type: string
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  user:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      username:
+                        type: string
+                      fullName:
+                        type: string
+                      email:
+                        type: string
+                      avatarUrl:
+                        type: string
+  /business:
+    get:
+      tags:
+        - Business
+      summary: Returns a list of all users.
+      description: Optional extended description in CommonMark or HTML.
+      responses:
+        "200": # status code
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                    username:
+                      type: string
+                    fullName:
+                      type: string
+                    email:
+                      type: string
+                    avatarUrl:
+                      type: string
+  /business/{businessId}:
+    get:
+      tags:
+        - Business
+      summary: Get a business by ID.
+      description: get a specific business by id.
+      operationId: getBusinessById
+      parameters:
+        - name: businessId
+          in: path
+          description: Business ID
+          required: true
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: A JSON array of business
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  business:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                      location:
+                        type: object
+                        properties:
+                          type:
+                            type: string
+                          coordinates:
+                            type: array
+                            items:
+                              type: int
+                      business_name:
+                        type: string
+                      ownerName:
+                        type: string
+                      address:
+                        type: string
+                      images:
+                        type: array
+                        items:
+                          type: string
+                      description:
+                        type: string
+                      long_description:
+                        type: string
+                      category:
+                        type: string
+    post:
+      tags:
+        - Business
+      summary: Post an Item to a basket by userId.
+      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
+      operationId: getBasketByUserId
+      parameters:
+        - name: Business Id
+          in: path
+          description: Business ID
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                business_name:
+                  type: string
+                ownerName:
+                  type: string
+                category:
+                  type: string
+                location:
+                  type: array
+                long_description:
+                  type: string
+                description:
+                  type: string
+                images:
+                  type: string
       responses:
         "200": # status code
           description: A JSON array of user names
@@ -507,110 +640,6 @@ paths:
               properties:
                 id:
                   type: string
-      responses:
-        "200": # status code
-          description: A JSON array of user names
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  user:
-                    type: object
-                    properties:
-                      _id:
-                        type: string
-                      username:
-                        type: string
-                      fullName:
-                        type: string
-                      email:
-                        type: string
-                      avatarUrl:
-                        type: string
-  /business:
-    get:
-      tags:
-        - Business
-      summary: Returns a list of all users.
-      description: Optional extended description in CommonMark or HTML.
-      responses:
-        "200": # status code
-          description: A JSON array of user names
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    _id:
-                      type: string
-                    username:
-                      type: string
-                    fullName:
-                      type: string
-                    email:
-                      type: string
-                    avatarUrl:
-                      type: string
-    post:
-      tags:
-        - Business
-      summary: Post an Item to a basket by userId.
-      description: A Basket is a list of items, and each item in a basket, has a refrence to a user. This endpoint get all items in a basket associated to a user.
-      operationId: getBasketByUserId
-      parameters:
-        - name: userId
-          in: path
-          description: User ID
-          required: true
-          schema:
-            type: string
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-      responses:
-        "200": # status code
-          description: A JSON array of user names
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  user:
-                    type: object
-                    properties:
-                      _id:
-                        type: string
-                      username:
-                        type: string
-                      fullName:
-                        type: string
-                      email:
-                        type: string
-                      avatarUrl:
-                        type: string
-  /business/{businessId}:
-    get:
-      tags:
-        - Business
-      summary: Get a user by ID.
-      description: Optional extended description in CommonMark or HTML.
-      operationId: getUserById
-      parameters:
-        - name: userId
-          in: path
-          description: User ID
-          required: true
-          schema:
-            type: string
       responses:
         "200": # status code
           description: A JSON array of user names
