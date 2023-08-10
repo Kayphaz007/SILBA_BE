@@ -6,6 +6,7 @@ const Basket = require("../../models/basketSchema");
 const Reviews = require("../../models/reviewSchema");
 const Blog = require("../../models/blogSchema");
 const Checkout = require("../../models/checkoutSchema");
+const Order = require("../../models/orderSchema");
 // const { businessJson } = require("../data/test-data");
 // const data = require("../data/test-data")
 
@@ -101,8 +102,28 @@ const seed = async (data) => {
     await Reviews.create(newReviewJson);
     await Blog.deleteMany();
     await Blog.create(blogJson);
-    // await Checkout.deleteMany();
-    // await Checkout.create(checkoutJson)
+    await Checkout.deleteMany();
+    let newCheckoutJson = newItemsJson.map((items) => {
+      let index = Math.floor(Math.random() * 7 + 1);
+      let { ownerUserId: buyerUserId } = allBusiness[index];
+      return {
+        ...items,
+        buyerId: buyerUserId,
+        quantity: Math.floor(Math.random() * 7 + 1),
+      };
+    });
+    await Checkout.create(newCheckoutJson);
+    await Order.deleteMany();
+    let newOrderJson = newItemsJson.map((items) => {
+      let index = Math.floor(Math.random() * 7 + 1);
+      let { ownerUserId: buyerUserId } = allBusiness[index];
+      return {
+        ...items,
+        buyerId: buyerUserId,
+        quantity: Math.floor(Math.random() * 7 + 1),
+      };
+    });
+    await Order.create(newOrderJson);
   } catch (error) {
     console.log(error);
   }
