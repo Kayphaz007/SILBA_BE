@@ -96,7 +96,7 @@ const seed = async (data) => {
       let { userId, username } = allUser[index];
       let { businessId, businessName } =
         allBusiness[Math.floor(Math.random() * 8 + 1)];
-      return { ...review, userId, username, businessId };
+      return { ...review, userId, username, businessId, businessName };
     });
     await Reviews.create(newReviewJson);
     await Blog.deleteMany();
