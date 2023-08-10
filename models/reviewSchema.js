@@ -4,6 +4,7 @@ const User = require("./userSchema");
 const reviewSchema = new mongoose.Schema(
   {
     username: { type: String, required: true },
+    businessName: { type: String },
     review: { type: String, required: true },
     review_votes: { type: Number, default: 0 },
     businessId: {
