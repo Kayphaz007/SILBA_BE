@@ -7,31 +7,31 @@ const Checkout = require("../models/checkoutSchema");
 const asyncWrapper = require("../middleware/async");
 
 exports.getOrderByUserId = async (req, res, next) => {
-  const { refUser } = req.params;
-  const basket = await Order.find({ refUser: refUser });
-  res.status(200).send({ basket });
+  const { refUser: buyerId } = req.params;
+  const order = await Order.find({ buyerId });
+  res.status(200).send({ order });
 };
 
 exports.postOrderByUserId = asyncWrapper(async (req, res, next) => {
-  const { refUser } = req.params;
+  const { buyerId } = req.params;
   // create an error to handle a case where id is an empty array
   // id will be an array of items id
   const { id } = req.body;
   if (!Array.isArray(id)) {
     id = [id];
   }
-  const itemsInCheckout = await findAndDeleteByIds(Checkout, id, refUser);
+  const itemsInOrder = await findAndDeleteByIds(Checkout, id, buyerId);
 
   await Order.create(itemsInBasket);
-  res.status(200).send({ itemsInCheckout });
+  res.status(200).send({ itemsInOrder });
 });
 
 exports.deleteItemFromOrder = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const { id } = req.body;
   const deletedItem = await Order.findOneAndDelete({
-    refUser: refUser,
-    refItem: id,
+    buyerId: refUser,
+    _id: id,
   });
   res.status(200).send({ deletedItem });
 });

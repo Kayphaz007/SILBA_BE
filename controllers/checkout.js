@@ -29,8 +29,8 @@ exports.deleteItemFromCheckout = asyncWrapper(async (req, res, next) => {
   const { refUser } = req.params;
   const { id } = req.body;
   const deletedItem = await Checkout.findOneAndDelete({
-    refUser: refUser,
-    refItem: id,
+    buyerId: refUser,
+    _id: id,
   });
   res.status(200).send({ deletedItem });
 });

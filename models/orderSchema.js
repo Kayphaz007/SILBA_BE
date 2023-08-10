@@ -1,6 +1,14 @@
 const mongoose = require("mongoose");
 
 const orderSchema = new mongoose.Schema({
+  sellerBusinessName: {
+    type: String,
+    required: true,
+  },
+  sellerUsername: {
+    type: String,
+    required: true,
+  },
   itemName: {
     type: String,
     required: true,
@@ -37,6 +45,7 @@ const orderSchema = new mongoose.Schema({
   quantity: {
     type: Number,
     required: true,
+    default: 1,
   },
 
   deliveryOrCollection: {
